@@ -56,7 +56,6 @@ ctaText.prepend(newH12);
 
 
 ctaTextH1s = document.querySelectorAll('.cta-text > h1');
-console.log(ctaTextH1s);
 
 for(i=0; i<mainTitleContent.length; i++){
   ctaTextH1s[i].textContent = mainTitleContent[i];
@@ -65,6 +64,20 @@ for(i=0; i<mainTitleContent.length; i++){
 //Populating the Nav Bar 
 let navItems = ["Services", "Product", "Vision", "Features", "About", "Contact"]
 let navigationAnchors = document.querySelectorAll('nav > a');
+let navigationContainer = document.querySelector('nav');
+
+//change text color to green - this is not working....?
+navigationContainer.style.color = "green";
+
+//adding items to nav using appendChild and prepend
+let lastNavItem = document.createElement("a");
+lastNavItem.textContent = "Subscriptions";
+navigationContainer.appendChild(lastNavItem);
+
+let firstNavItem = document.createElement("a");
+firstNavItem.textContent = "Get Started";
+navigationContainer.prepend(firstNavItem);
+
 
 for (i=0; i < navItems.length; i++){
   navigationAnchors[i].textContent = navItems[i];
